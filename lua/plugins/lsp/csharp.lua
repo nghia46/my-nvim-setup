@@ -2,6 +2,15 @@ local lspconfig = require("lspconfig")
 
 lspconfig.omnisharp.setup({
   cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+  root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln"),
+  settings = {
+    FormattingOptions = {
+      EnableEditorConfigSupport = true,
+    },
+    RoslynExtensionsOptions = {
+      EnableAnalyzersSupport = true,
+    },
+  },
   on_attach = function(client, bufnr)
     if client.server_capabilities.diagnostics then
       vim.lsp.diagnostic.on_attach(client, bufnr)
@@ -17,4 +26,3 @@ lspconfig.omnisharp.setup({
     vim.keymap.set("n", "<leader>ra", vim.lsp.buf.references, { desc = "Find references" })
   end,
 })
-
