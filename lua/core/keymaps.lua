@@ -11,3 +11,5 @@ end, { desc = "Format file" })
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr, desc = 'LSP: Code Action' })
 vim.keymap.set('n', 'H', vim.lsp.buf.hover, { buffer = bufnr, desc = 'LSP: Hover' })
+
+vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
