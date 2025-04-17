@@ -12,9 +12,8 @@ opt.termguicolors = true
 vim.g.mapleader = " "
 
 vim.diagnostic.config({
-    virtual_text = true, -- Hiển thị lỗi inline
-    signs = true,        -- Hiển thị ký hiệu (như "E")
-    update_in_insert = true, -- Không cập nhật lỗi khi đang gõ
-    severity_sort = true,     -- Sắp xếp lỗi theo mức độ nghiêm trọng
-  })
-
+  virtual_text = true,     -- Hiển thị lỗi inline
+  signs = true,            -- Hiển thị ký hiệu (như "E")
+  update_in_insert = true, -- Không cập nhật lỗi khi đang gõ
+  severity_sort = true,    -- Sắp xếp lỗi theo mức độ nghiêm trọng
+})
